@@ -1,6 +1,7 @@
 package com.raitzTiago.certification_nlw.modules.students.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

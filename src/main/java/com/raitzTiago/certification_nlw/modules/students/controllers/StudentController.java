@@ -2,6 +2,7 @@ package com.raitzTiago.certification_nlw.modules.students.controllers;
 
 import com.raitzTiago.certification_nlw.modules.students.dto.StudentCertificationAnswerDTO;
 import com.raitzTiago.certification_nlw.modules.students.dto.VerifyHasCertificationDTO;
+import com.raitzTiago.certification_nlw.modules.students.entities.CertificationStudentEntity;
 import com.raitzTiago.certification_nlw.modules.students.useCases.StudentCertificationAnswersUseCase;
 import com.raitzTiago.certification_nlw.modules.students.useCases.VerifyIfHasCertificationUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class StudentController {
 
     @PostMapping("/verifyIfHasCertification")
     public String verifyIfHasCertification(@RequestBody VerifyHasCertificationDTO verifyHasCertificationDTO) {
-        //Email
-        //Technology
+        // Email
+        // Technology
         var result = this.verifyIfHasCertificationUseCase.execute(verifyHasCertificationDTO);
         if (result)
             return "Usuário já fez a prova!!!";
@@ -32,9 +33,9 @@ public class StudentController {
     }
 
     @PostMapping("/certification/answer")
-    public StudentCertificationAnswerDTO certificationAnswer(@RequestBody StudentCertificationAnswerDTO studentCertificationAnswerDTO){
+    public CertificationStudentEntity certificationAnswer(
+            @RequestBody StudentCertificationAnswerDTO studentCertificationAnswerDTO) {
         return this.studentCertificationAnswersUseCase.execute(studentCertificationAnswerDTO);
     }
-
 
 }
